@@ -1,24 +1,59 @@
 #!/bin/bash
 
-set -ouex pipefail
+set ${SET_X:+-x} -eou pipefail
+
+trap '[[ $BASH_COMMAND != echo* ]] && [[ $BASH_COMMAND != log* ]] && echo "+ $BASH_COMMAND"' DEBUG
+
+function echo_group() {
+    local WHAT
+    WHAT="$(
+        basename "$1" .sh |
+            tr "-" " " |
+            tr "_" " "
+    )"
+    echo "::group:: == ${WHAT^^} =="
+    "$1"
+    echo "::endgroup::"
+}
+
+log() {
+  echo "== $* =="
+}
+
+
+log "Starting building"
+### Create root directory for hdd mount points 
+mkdir /data
 
 ### Install packages
+log "Installing apps"
+echo_group /ctx/install_packages.sh
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+# Install RPMs
+for rpm_file in ctx/rpm/*.rpm; do
+    if [ -f "$rpm_file" ]; then
+        dnf5 install -y "$rpm_file"
+    fi
+done
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+log "Allow Samba on home dirs"
+setsebool -P samba_enable_home_dirs=1
 
-#### Example for enabling a System Unit File
+log "Enable loading kernel modules"
+setsebool -P domain_kernel_load_modules on
 
-systemctl enable podman.socket
+log "Enabling system services"
+systemctl enable podman.socket syncthing@kohega.service zerotier-one.service lactd.service sshd.service
+
+log "Adding personal just recipes"
+echo "import \"/usr/share/kohega/just/kohega.just\"" >>/usr/share/ublue-os/justfile
+
+
+log "Rebuild initramfs"
+echo_group /ctx/build-initramfs.sh
+
+log "Post build cleanup"
+echo_group /ctx/cleanup.sh
+
+log "Build complete"
