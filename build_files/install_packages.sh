@@ -25,7 +25,6 @@ LAYERED_PACKAGES=(
     filezilla
     firefox
     firefox-langpacks
-    localsend
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 
