@@ -11,9 +11,7 @@ log() {
 log "Enable Copr repos"
 
 COPR_REPOS=(
-    ilyaz/LACT
     zliced13/YACR
-    atim/heroic-games-launcher
 )
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr enable "$repo"
@@ -27,7 +25,6 @@ LAYERED_PACKAGES=(
     filezilla
     firefox
     firefox-langpacks
-    naps2
     localsend
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
