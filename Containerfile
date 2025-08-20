@@ -1,9 +1,9 @@
 FROM scratch AS ctx
 COPY build_files /
-COPY system_files /
 
 # Bluefin base
 FROM ghcr.io/ublue-os/bluefin:stable
+COPY system_files /
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
