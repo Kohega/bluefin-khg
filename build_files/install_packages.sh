@@ -27,6 +27,7 @@ LAYERED_PACKAGES=(
     firefox-langpacks
     ulauncher
     pcmanfm
+    gh
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 
