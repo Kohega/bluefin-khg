@@ -31,12 +31,14 @@ echo_group /ctx/install_packages.sh
 
 # Install RPMs
 log "Installing apps from RPM"
+cd /ctx/rpm
+wget --progress=bar https://send.kohega.com/downloadFile?id=INDPkZI3CAw7JBL
 for rpm_file in ctx/rpm/*.rpm; do
     if [ -f "$rpm_file" ]; then
         dnf5 install -y "$rpm_file"
     fi
 done
-
+cd ../..
 
 log "Allow Samba on home dirs"
 setsebool -P samba_enable_home_dirs=1
