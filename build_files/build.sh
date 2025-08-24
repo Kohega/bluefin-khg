@@ -30,6 +30,7 @@ log "Installing apps"
 echo_group /ctx/install_packages.sh
 
 # Install RPMs
+log "Installing apps from RPM"
 for rpm_file in ctx/rpm/*.rpm; do
     if [ -f "$rpm_file" ]; then
         dnf5 install -y "$rpm_file"
