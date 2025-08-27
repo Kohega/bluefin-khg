@@ -28,6 +28,7 @@ LAYERED_PACKAGES=(
     ulauncher
     pcmanfm
     gh
+    usbmuxd
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 
