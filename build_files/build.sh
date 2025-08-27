@@ -32,7 +32,7 @@ echo_group /ctx/install_packages.sh
 # Install RPMs
 log "Installing apps from RPM"
 cd /ctx/rpm
-wget --progress=bar https://send.kohega.com/downloadFile?id=INDPkZI3CAw7JBL
+wget https://send.kohega.com/downloadFile?id=INDPkZI3CAw7JBL
 for rpm_file in ctx/rpm/*.rpm; do
     if [ -f "$rpm_file" ]; then
         dnf5 install -y "$rpm_file"
