@@ -4,7 +4,7 @@ install-flatpaks:
     set -euo pipefail
 
     echo "Installing Flatpaks..."
-    xargs -a <(curl --retry 3 -sL https://raw.githubusercontent.com/kohega/Luminescence/main/repo_files/flatpaks) flatpak --system -y install
+    xargs -a <(curl --retry 3 -sL https://raw.githubusercontent.com/Kohega/bluefin-khg/refs/heads/main/system_files/usr/share/kohega/flatpaks) flatpak --system -y install
     echo "Flatpaks installation complete."
 
 install-appimages:
@@ -64,7 +64,7 @@ install-appimages:
         echo "Failed to install $name"
       fi
       rm -f "$appimage"
-    done < <(curl --retry 3 -sL https://raw.githubusercontent.com/kohega/Luminescence/main/repo_files/appimages)
+    done < <(curl --retry 3 -sL https://raw.githubusercontent.com/Kohega/bluefin-khg/refs/heads/main/system_files/usr/share/kohega/appimages)
     echo "AppImages installation complete."
 
 # Restart Bluetooth to fix issues

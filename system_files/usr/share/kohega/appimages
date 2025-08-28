@@ -1,0 +1,5 @@
+ganymede,https://github.com/GanymedeTeam/ganymede-app/releases/download/*/Ganymede_*_amd64.AppImage
+losslesscut,https://github.com/mifi/lossless-cut/releases/download/v3.65.0/LosslessCut-linux-x86_64.AppImage
+remoteplaywhatever,https://github.com/m4dEngi/RemotePlayWhatever/releases/download/*/RemotePlayWhatever-*-x86_64.AppImage
+qdiskinfo,https://github.com/edisionnano/QDiskInfo/releases/download/*/QDiskInfo-x86_64.AppImage
+ankama-launcher,https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage
