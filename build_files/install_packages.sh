@@ -33,8 +33,6 @@ LAYERED_PACKAGES=(
     qbittorrent
     discord
     bleachbit
-    dolphin
-    qt6ct
     nemo
     rofi-wayland
 )
