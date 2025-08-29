@@ -34,7 +34,7 @@ LAYERED_PACKAGES=(
     discord
     bleachbit
     nemo
-    fuzzel
+    ulauncher
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 
