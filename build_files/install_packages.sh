@@ -21,20 +21,20 @@ log "Install layered applications"
 
 # Layered Applications
 LAYERED_PACKAGES=(
-    aria2c
     syncthing
     filezilla
     firefox
     firefox-langpacks
     gh
     usbmuxd
+    aria2c
     kodi
     kodi-inputstream-adaptive
     qbittorrent
     discord
     bleachbit
     nemo
-    rofi-wayland
+    fuzzel
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 

@@ -36,7 +36,6 @@ for rpm_file in ctx/rpm/*.rpm; do
         dnf5 install -y "$rpm_file"
     fi
 done
-cd ../..
 
 log "Allow Samba on home dirs"
 setsebool -P samba_enable_home_dirs=1

@@ -1,4 +1,4 @@
-# Bluefin- KHG's ver.
+# Bluefin - KHG's ver.
 
 # Purpose
 
@@ -81,17 +81,12 @@ This repository is my own custom [bootc](https://github.com/bootc-dev/bootc) ima
  | dolphin      | Advanced file manager for KDE.                                                                  |
  | nemo         | File manager for Cinnamon (fork of Nautilus).                                                   |
 
----
-### Interface Customization
- | Package      | Description                                                                                     |
- |--------------|-------------------------------------------------------------------------------------------------|
- | qt6ct        | Configuration tool for Qt6 applications (themes, fonts, etc.).                                  |
 
 ---
 ### Application Launcher
  | Package               | Description                                                                                     |
  |-----------------------|-------------------------------------------------------------------------------------------------|
- | rofi-wayland          | Wayland-compatible version of Rofi (application launcher and window switcher).                   |
+ | fuzzel         | Application launcher and window switcher.                   |
 
 ---
 
