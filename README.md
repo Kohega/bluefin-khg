@@ -50,17 +50,12 @@ This repository is my own custom [bootc](https://github.com/bootc-dev/bootc) ima
  | usbmuxd     | Daemon for communication with iOS devices.                                                      |
 
 ---
-### Gaming
- | Package                          | Description                                                                                     |
- |----------------------------------|-------------------------------------------------------------------------------------------------|
- | heroic-games-launcher-bin        | Open-source launcher for Epic Games and GOG games.                                               |
-
----
 ### Multimedia
  | Package                          | Description                                                                                     |
  |----------------------------------|-------------------------------------------------------------------------------------------------|
  | kodi                             | Media player and entertainment center.                                                          |
  | kodi-inputstream-adaptive        | Kodi plugin for adaptive streaming (Netflix, Prime Video, etc.).                                |
+ | clapper                          | GTK media player                                                                                |
 
 ---
 ### Communication
@@ -86,7 +81,7 @@ This repository is my own custom [bootc](https://github.com/bootc-dev/bootc) ima
 ### Application Launcher
  | Package               | Description                                                                                     |
  |-----------------------|-------------------------------------------------------------------------------------------------|
- | fuzzel         | Application launcher and window switcher.                   |
+ | Ulauncher        | Application launcher and window switcher.                   |
 
 ---
 
