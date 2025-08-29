@@ -35,7 +35,11 @@ LAYERED_PACKAGES=(
     bleachbit
     nemo
     ulauncher
-    clapper
+    totem
+    cinnamon-translations
+    nemo-fileroller
+    nemo-extensions
+    nemo-preview
 )
 dnf5 install --setopt=install_weak_deps=False --skip-unavailable --allowerasing -y "${LAYERED_PACKAGES[@]}"
 
